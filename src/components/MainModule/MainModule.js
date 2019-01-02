@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import s from './MainModule.module.scss';
 import Footer from './../Footer/Footer';
+import GeneratedSection from './GeneratedSection/GeneratedSection';
 
 class MainModule extends Component {
     constructor(props) {
@@ -52,6 +53,8 @@ class MainModule extends Component {
                                 })}
                             </div>
                         </div>
+                        <GeneratedSection 
+                            activeCategory={this.state.activeCategory} />
                         {/* <Footer /> */}
                     </div>
                 </div>
