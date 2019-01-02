@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import s from './GeneratedSection.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 class GeneratedSection extends Component {
     constructor(props) {

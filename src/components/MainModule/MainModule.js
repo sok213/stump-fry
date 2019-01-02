@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import s from './MainModule.module.scss';
 import Footer from './../Footer/Footer';
 import GeneratedSection from './GeneratedSection/GeneratedSection';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faUsers, 
+    faHeartbeat, 
+    faPalette, 
+    faRandom 
+} from '@fortawesome/free-solid-svg-icons';
 
 class MainModule extends Component {
     constructor(props) {
@@ -22,6 +29,27 @@ class MainModule extends Component {
         this.setState({ activeCategory: selectedCategory })
     }
 
+    renderIcon(tab) {
+
+        if(tab === 'social') {
+            return (
+                <FontAwesomeIcon icon={faUsers} className={s.icon} />
+            );
+        } else if(tab === 'health') {
+            return (
+                <FontAwesomeIcon icon={faHeartbeat} className={s.icon} />
+            );
+        } else if(tab === 'creative') {
+            return (
+                <FontAwesomeIcon icon={faPalette} className={s.icon} />
+            );
+        } else if(tab === 'random') {
+            return (
+                <FontAwesomeIcon icon={faRandom} className={s.icon} />
+            );
+        }
+    }
+
     renderNavItem(title) {
         return (
             <div 
@@ -29,7 +57,8 @@ class MainModule extends Component {
                     ${s.card}
                 `}
                 onClick={this.navClick.bind(this, title)}
-            >
+            >  
+                {this.renderIcon(title)}
                 <p>{title.toLowerCase()}</p>
                 <div 
                     className={`
