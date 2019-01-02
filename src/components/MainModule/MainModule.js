@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import s from './MainModule.module.scss';
-import Footer from './../Footer/Footer';
+// import Footer from './../Footer/Footer';
 import GeneratedSection from './GeneratedSection/GeneratedSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -52,13 +52,14 @@ class MainModule extends Component {
         );
     }
 
-    renderNavItem(title) {
+    renderNavItem(title, i) {
         return (
             <div 
-                class={`
+                className={`
                     ${s.card}
                 `}
                 onClick={this.navClick.bind(this, title)}
+                key={i}
             >  
                 {this.renderIcon(title)}
                 <p>{title.toLowerCase()}</p>
@@ -78,9 +79,9 @@ class MainModule extends Component {
                 <div className={s.mainModule}>
                     <div className={s.mainPanel}>
                         <div className={s.navContainer}>
-                            <div class={s.scrollingWrapper} id={s.style6}>
-                                {this.state.navItems.map((item) => {
-                                    return this.renderNavItem(item);
+                            <div className={s.scrollingWrapper} id={s.style6}>
+                                {this.state.navItems.map((item, i) => {
+                                    return this.renderNavItem(item, i);
                                 })}
                             </div>
                         </div>

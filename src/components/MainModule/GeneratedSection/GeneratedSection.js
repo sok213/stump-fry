@@ -74,7 +74,7 @@ class GeneratedSection extends Component {
     }
 
     generateAction = () => {
-
+        console.log('Gen act.');
     }
 
     render() {
@@ -83,6 +83,11 @@ class GeneratedSection extends Component {
                 <div className={s.answerContainer}>
                     <h1>Instructions</h1>
                     <p>This is a very simple tool used to generate productive activities of what you could be doing with your time instead of endlessly browsing mindless content on the internet.</p>
+
+                    <ul className={s.steps}>
+                        <li>Choose a category of activities you favor above.</li>
+                        <li>Click the "Generate Activity" button and wait for a suggested activity to be generated.</li>
+                    </ul>
                 </div>
                 <div className={s.buttonContainer}>
                     <button 
