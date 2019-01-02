@@ -73,6 +73,10 @@ class GeneratedSection extends Component {
         }
     }
 
+    generateAction = () => {
+
+    }
+
     render() {
         return (
             <div className={s.container}>
@@ -81,7 +85,12 @@ class GeneratedSection extends Component {
                     <p>Active Category: {this.props.activeCategory}</p>
                 </div>
                 <div className={s.buttonContainer}>
-                    <button>Generate New</button>
+                    <button 
+                        className={s.generateCta}
+                        onClick={this.generateAction}
+                    >
+                        Generate Activity
+                    </button>
                 </div>
             </div>
         );

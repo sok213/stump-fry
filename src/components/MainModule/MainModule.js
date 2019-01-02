@@ -32,19 +32,23 @@ class MainModule extends Component {
     renderIcon(tab) {
         
         let icon = null;
+        let color = null;
 
         if(tab === 'social') {
             icon = faUsers;
+            color = '#347ed8';
         } else if(tab === 'health') {
             icon = faHeartbeat;
+            color = '#e04a81';
         } else if(tab === 'creative') {
             icon = faPalette;
+            color = '#e0d26d';
         } else if(tab === 'random') {
             icon = faRandom;
         }
 
         return (
-            <FontAwesomeIcon icon={icon} className={s.icon} />
+            <FontAwesomeIcon icon={icon} className={s.icon} style={{ color }}/>
         );
     }
 
@@ -80,8 +84,10 @@ class MainModule extends Component {
                                 })}
                             </div>
                         </div>
-                        <GeneratedSection 
+                        <div className={s.generatedContainer}>
+                            <GeneratedSection 
                             activeCategory={this.state.activeCategory} />
+                        </div>
                         {/* <Footer /> */}
                     </div>
                 </div>

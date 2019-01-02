@@ -36,6 +36,7 @@
     flex-direction: column;
     align-items: center;
     height: 100px;
+    margin-top: 5px;
 
     @media screen and (max-width: 485px) {
         border: none;
@@ -92,6 +93,7 @@
 }
 
 .underline {
+    border-radius: 50px;
     width: 0px;
     transition: 0.3s;
     padding: 0px;
@@ -102,6 +104,10 @@
 }
 
 .activeTab {
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid #347ed8;
     width: 80%;
+}
+
+.generatedContainer {
+    height: 300px;
 }
