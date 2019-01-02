@@ -7,7 +7,8 @@ import {
     faUsers, 
     faHeartbeat, 
     faPalette, 
-    faRandom 
+    faRandom,
+    faHatWizard 
 } from '@fortawesome/free-solid-svg-icons';
 
 class MainModule extends Component {
@@ -19,6 +20,7 @@ class MainModule extends Component {
                 'social',
                 'health',
                 'creative',
+                'misc',
                 'random'
             ],
             activeCategory: null,
@@ -43,6 +45,9 @@ class MainModule extends Component {
         } else if(tab === 'creative') {
             icon = faPalette;
             color = '#e0d26d';
+        } else if(tab === 'misc') {
+            icon = faHatWizard;
+            color = '#6D47F0';
         } else if(tab === 'random') {
             icon = faRandom;
         }

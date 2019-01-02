@@ -115,6 +115,9 @@ class GeneratedSection extends Component {
         } else if(this.props.activeCategory === 'creative') {
             let genRandomIndex = Math.floor(Math.random() * (this.state.creativeActs.length - 1));
             selectedActivity = this.state.creativeActs[genRandomIndex];
+        } else if(this.props.activeCategory === 'misc') {
+            let genRandomIndex = Math.floor(Math.random() * (this.state.miscActs.length - 1));
+            selectedActivity = this.state.miscActs[genRandomIndex];
         } else if(this.props.activeCategory === 'random') {
             let genRandomIndex = Math.floor(Math.random() * (this.state.randomActs.length - 1));
             selectedActivity = this.state.randomActs[genRandomIndex];
@@ -137,17 +140,11 @@ class GeneratedSection extends Component {
     }
 
     renderContent = () => {
-        // const override = css`
-        //     display: block;
-        //     margin: 0 auto;
-        //     border-color: red;
-        // `;
 
         if(this.state.loading) {
             return (
                 <div className={s.loadingContainer}>
                     <MoonLoader
-                        className={""}
                         sizeUnit={"px"}
                         size={150}
                         color={'#123abc'}
