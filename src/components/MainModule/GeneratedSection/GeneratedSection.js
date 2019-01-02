@@ -159,7 +159,7 @@ class GeneratedSection extends Component {
 
         if(this.props.activeCategory === null || !this.state.ctaClicked) {
             return (
-                <div>
+                <div className={s.instructionsContainer}>
                     <h1>Instructions</h1>
                     <p>This is a very simple tool used to generate productive activities of what you could be doing with your time instead of endlessly browsing mindless content on the internet.</p>
                     <ul className={s.steps}>

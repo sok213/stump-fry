@@ -24,51 +24,64 @@
 
 .generateCta {
     outline: none;
-	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
-	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
-	box-shadow:inset 0px 1px 3px 0px #91b8b3;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
-	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
-	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
-	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
-	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
-	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
-	background-color:#768d87;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
-    border:1px solid #566963;
-    transition: 0.3s;
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811));
+	background:-moz-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-webkit-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-o-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:-ms-linear-gradient(top, #77d42a 5%, #5cb811 100%);
+	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811',GradientType=0);
+	background-color:#77d42a;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #268a16;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:#306108;
 	font-family:Arial;
 	font-size:15px;
 	font-weight:bold;
-	padding:11px 23px;
+	padding: 15px 30px;
 	text-decoration:none;
-	text-shadow:0px -1px 0px #44a395;
+	text-shadow:0px 1px 0px #aade7c;
 }
 .generateCta:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
-	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
-	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
-	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
-	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
-	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
-	background-color:#6c7c7c;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a));
+	background:-moz-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:-webkit-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:-o-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:-ms-linear-gradient(top, #5cb811 5%, #77d42a 100%);
+	background:linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a',GradientType=0);
+	background-color:#5cb811;
+}
+.generateCta:active {
+	position:relative;
+	top:1px;
 }
 
 .steps {
     list-style-type: upper-roman;
 }
 
+// font-family: 'Quicksand', sans-serif;
+// font-family: 'Open Sans Condensed', sans-serif;
+// font-family: 'Indie Flower', cursive;
+
+.instructionsContainer {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+
+    @media screen and (max-width: 500px) {
+        font-size: 15px;
+    }
+}
+
 .generateActivityContainer {
-    font-size: 24px;
-    line-height: 34px;
-    letter-spacing: 3px;
     height: 100%;
     max-width: 600px;
     margin-left: auto;
@@ -80,14 +93,19 @@
 
     p {
         @extend .fadeIn;
+        font-family: 'Indie Flower', cursive;
+        font-size: 32px;
+        line-height: 34px;
+        letter-spacing: 3px;
         margin-left: auto;
         margin-right: auto;
-    }
+        color: rgb(55, 122, 209);
 
-    @media screen and (max-width: 500px) {
-        font-size: 20px;
-        line-height: 30px;
-        letter-spacing: 2px;
+        @media screen and (max-width: 500px) {
+            font-size: 26px;
+            line-height: 30px;
+            letter-spacing: 2px;
+        }
     }
 }
 
