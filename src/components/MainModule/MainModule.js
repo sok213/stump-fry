@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import s from './MainModule.module.scss';
-// import Footer from './../Footer/Footer';
 import GeneratedSection from './GeneratedSection/GeneratedSection';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -98,7 +97,6 @@ class MainModule extends Component {
                             <GeneratedSection
                                 activeCategory={this.state.activeCategory} />
                         </div>
-                        {/* <Footer /> */}
                     </div>
                 </div>
             </div>
