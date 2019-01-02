@@ -70,13 +70,26 @@ class GeneratedSection extends Component {
                 'Wash your dishes.',
                 'Watch a motivational video in its entirety.'
             ],
+            randomActs: [],
             selectedActivity: null,
             ctaClicked: false
         }
     }
 
+    shuffleArray(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
     componentDidMount() {
-        // TODO: concatenate all category arrays into one and set to randomActivity state array.
+        const socialActs = this.state.socialActs;
+        const healthActs = this.state.healthActs;
+        const creativeActs = this.state.creativeActs;
+        const randomActs = this.shuffleArray(socialActs.concat(healthActs).concat(creativeActs));
+        this.setState({ randomActs });
     }
 
     generateAction = () => {
@@ -93,6 +106,8 @@ class GeneratedSection extends Component {
             let genRandomIndex = Math.floor(Math.random() * (this.state.creativeActs.length - 1));
             selectedActivity = this.state.creativeActs[genRandomIndex];
         } else if(this.props.activeCategory === 'random') {
+            let genRandomIndex = Math.floor(Math.random() * (this.state.randomActs.length - 1));
+            selectedActivity = this.state.randomActs[genRandomIndex];
         }
 
         this.setState({ selectedActivity });
