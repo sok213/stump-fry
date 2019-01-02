@@ -14,6 +14,7 @@
 }
 
 .generateCta {
+    outline: none;
 	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
 	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
 	box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -28,7 +29,8 @@
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
-	border:1px solid #566963;
+    border:1px solid #566963;
+    transition: 0.3s;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -52,4 +54,34 @@
 
 .steps {
     list-style-type: upper-roman;
+}
+
+.generateActivityContainer {
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 3px;
+    height: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media screen and (max-width: 500px) {
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 2px;
+    }
+}
+
+.disabledCta {
+    opacity: 0.7;
+    pointer-events: none;
 }

@@ -69,29 +69,76 @@ class GeneratedSection extends Component {
                 'Buy a painting and hang it on your wall.',
                 'Wash your dishes.',
                 'Watch a motivational video in its entirety.'
-            ]
+            ],
+            selectedActivity: null,
+            ctaClicked: false
         }
     }
 
+    componentDidMount() {
+        // TODO: concatenate all category arrays into one and set to randomActivity state array.
+    }
+
     generateAction = () => {
-        console.log('Gen act.');
+        this.setState({ ctaClicked: true });
+        let selectedActivity = null;
+
+        if(this.props.activeCategory === 'social') {
+            let genRandomIndex = Math.floor(Math.random() * (this.state.socialActs.length - 1));
+            selectedActivity = this.state.socialActs[genRandomIndex];
+        } else if(this.props.activeCategory === 'health') {
+            let genRandomIndex = Math.floor(Math.random() * (this.state.healthActs.length - 1));
+            selectedActivity = this.state.healthActs[genRandomIndex];
+        } else if(this.props.activeCategory === 'creative') {
+            let genRandomIndex = Math.floor(Math.random() * (this.state.creativeActs.length - 1));
+            selectedActivity = this.state.creativeActs[genRandomIndex];
+        } else if(this.props.activeCategory === 'random') {
+        }
+
+        this.setState({ selectedActivity });
+    }
+
+    toggleDisable = () => {
+        if(this.props.activeCategory === null) {
+            return s.disabledCta;
+        }
+
+        return null;
+    }
+
+    renderContent = () => {
+        if(this.props.activeCategory === 'tesr' || !this.state.ctaClicked) {
+            return (
+                <div>
+                    <h1>Instructions</h1>
+                    <p>This is a very simple tool used to generate productive activities of what you could be doing with your time instead of endlessly browsing mindless content on the internet.</p>
+                    <ul className={s.steps}>
+                        <li>Choose a category of activities you favor above.</li>
+                        <li>Click the "Generate Activity" button and wait for a suggested activity to be generated.</li>
+                    </ul>
+                </div>
+            );
+        }
+
+        return (
+            <div className={s.generateActivityContainer}>
+                <p>{this.state.selectedActivity}</p>
+            </div>
+        )
     }
 
     render() {
         return (
             <div className={s.container}>
                 <div className={s.answerContainer}>
-                    <h1>Instructions</h1>
-                    <p>This is a very simple tool used to generate productive activities of what you could be doing with your time instead of endlessly browsing mindless content on the internet.</p>
-
-                    <ul className={s.steps}>
-                        <li>Choose a category of activities you favor above.</li>
-                        <li>Click the "Generate Activity" button and wait for a suggested activity to be generated.</li>
-                    </ul>
+                    {this.renderContent()}
                 </div>
                 <div className={s.buttonContainer}>
                     <button 
-                        className={s.generateCta}
+                        className={`
+                            ${s.generateCta}
+                            ${this.toggleDisable()}
+                        `}
                         onClick={this.generateAction}
                     >
                         Generate Activity
