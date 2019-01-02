@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import s from './MainModule.module.scss';
 
 class MainModule extends Component {
     constructor(props) {
@@ -11,8 +12,15 @@ class MainModule extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Main Module.</h1>
+            <div className={s.mainModuleContainer}>
+                <div className={s.mainModule}>
+                    <div className={s.mainPanel}>
+                        {/* TODO: 
+                            1) Create acitvity navigation bar.
+                            2) 
+                        */}
+                    </div>
+                </div>
             </div>
         )
     }
