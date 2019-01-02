@@ -30,24 +30,22 @@ class MainModule extends Component {
     }
 
     renderIcon(tab) {
+        
+        let icon = null;
 
         if(tab === 'social') {
-            return (
-                <FontAwesomeIcon icon={faUsers} className={s.icon} />
-            );
+            icon = faUsers;
         } else if(tab === 'health') {
-            return (
-                <FontAwesomeIcon icon={faHeartbeat} className={s.icon} />
-            );
+            icon = faHeartbeat;
         } else if(tab === 'creative') {
-            return (
-                <FontAwesomeIcon icon={faPalette} className={s.icon} />
-            );
+            icon = faPalette;
         } else if(tab === 'random') {
-            return (
-                <FontAwesomeIcon icon={faRandom} className={s.icon} />
-            );
+            icon = faRandom;
         }
+
+        return (
+            <FontAwesomeIcon icon={icon} className={s.icon} />
+        );
     }
 
     renderNavItem(title) {

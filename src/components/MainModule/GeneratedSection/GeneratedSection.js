@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import s from './GeneratedSection.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 
 class GeneratedSection extends Component {
     constructor(props) {
@@ -77,9 +75,14 @@ class GeneratedSection extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Gen Section.</h1>
-                <p>Active Category: {this.props.activeCategory}</p>
+            <div className={s.container}>
+                <div className={s.answerContainer}>
+                    <h1>Gen Section.</h1>
+                    <p>Active Category: {this.props.activeCategory}</p>
+                </div>
+                <div className={s.buttonContainer}>
+                    <button>Generate New</button>
+                </div>
             </div>
         );
     }
