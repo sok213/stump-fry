@@ -21,7 +21,7 @@ class MainModule extends Component {
                 'creative',
                 'random'
             ],
-            activeCategory: null
+            activeCategory: null,
         }
     }
 
@@ -48,7 +48,11 @@ class MainModule extends Component {
         }
 
         return (
-            <FontAwesomeIcon icon={icon} className={s.icon} style={{ color }}/>
+            <FontAwesomeIcon 
+                icon={icon} 
+                className={s.icon} 
+                style={{ color }}
+            />
         );
     }
 
@@ -86,7 +90,7 @@ class MainModule extends Component {
                             </div>
                         </div>
                         <div className={s.generatedContainer}>
-                            <GeneratedSection 
+                            <GeneratedSection
                                 activeCategory={this.state.activeCategory} />
                         </div>
                         {/* <Footer /> */}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import s from './GeneratedSection.module.scss';
+import { MoonLoader } from 'react-spinners';
 
 class GeneratedSection extends Component {
     constructor(props) {
@@ -72,8 +73,17 @@ class GeneratedSection extends Component {
             ],
             randomActs: [],
             selectedActivity: null,
-            ctaClicked: false
+            ctaClicked: false,
+            loading: false
         }
+    }
+
+    showLoading = () => {
+        this.setState({ loading: true });
+    }
+
+    hideLoading = () => {
+        this.setState({ loading: false });
     }
 
     shuffleArray(a) {
@@ -111,6 +121,11 @@ class GeneratedSection extends Component {
         }
 
         this.setState({ selectedActivity });
+        this.showLoading(selectedActivity);
+
+        setTimeout(function() {
+            this.hideLoading(selectedActivity);
+        }.bind(this), 1500);
     }
 
     toggleDisable = () => {
@@ -122,7 +137,27 @@ class GeneratedSection extends Component {
     }
 
     renderContent = () => {
-        if(this.props.activeCategory === 'tesr' || !this.state.ctaClicked) {
+        // const override = css`
+        //     display: block;
+        //     margin: 0 auto;
+        //     border-color: red;
+        // `;
+
+        if(this.state.loading) {
+            return (
+                <div className={s.loadingContainer}>
+                    <MoonLoader
+                        className={""}
+                        sizeUnit={"px"}
+                        size={150}
+                        color={'#123abc'}
+                        loading={this.state.loading}
+                    />
+                </div>
+            );
+        }
+
+        if(this.props.activeCategory === null || !this.state.ctaClicked) {
             return (
                 <div>
                     <h1>Instructions</h1>

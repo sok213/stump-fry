@@ -13,6 +13,15 @@
     height: 90%;
 }
 
+.loadingContainer {
+    @extend .fadeIn;
+    padding-top: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .generateCta {
     outline: none;
 	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
@@ -70,6 +79,7 @@
     align-items: center;
 
     p {
+        @extend .fadeIn;
         margin-left: auto;
         margin-right: auto;
     }
@@ -84,4 +94,17 @@
 .disabledCta {
     opacity: 0.7;
     pointer-events: none;
+}
+
+.fadeIn {
+    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
