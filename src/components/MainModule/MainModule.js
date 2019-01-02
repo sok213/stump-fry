@@ -86,7 +86,7 @@ class MainModule extends Component {
                         </div>
                         <div className={s.generatedContainer}>
                             <GeneratedSection 
-                            activeCategory={this.state.activeCategory} />
+                                activeCategory={this.state.activeCategory} />
                         </div>
                         {/* <Footer /> */}
                     </div>

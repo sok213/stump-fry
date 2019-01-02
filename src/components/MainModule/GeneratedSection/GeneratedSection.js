@@ -81,8 +81,8 @@ class GeneratedSection extends Component {
         return (
             <div className={s.container}>
                 <div className={s.answerContainer}>
-                    <h1>Gen Section.</h1>
-                    <p>Active Category: {this.props.activeCategory}</p>
+                    <h1>Instructions</h1>
+                    <p>This is a very simple tool used to generate productive activities of what you could be doing with your time instead of endlessly browsing mindless content on the internet.</p>
                 </div>
                 <div className={s.buttonContainer}>
                     <button 
