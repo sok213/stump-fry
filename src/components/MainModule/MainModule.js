@@ -46,7 +46,7 @@ class MainModule extends Component {
                 <div className={s.mainModule}>
                     <div className={s.mainPanel}>
                         <div className={s.navContainer}>
-                            <div class={s.scrollingWrapper}>
+                            <div class={s.scrollingWrapper} id={s.style6}>
                                 {this.state.navItems.map((item) => {
                                     return this.renderNavItem(item);
                                 })}
