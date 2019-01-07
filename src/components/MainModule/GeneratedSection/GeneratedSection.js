@@ -105,20 +105,21 @@ class GeneratedSection extends Component {
     generateAction = () => {
         this.setState({ ctaClicked: true });
         let selectedActivity = null;
+        const { activeCategory } = this.props;
 
-        if(this.props.activeCategory === 'social') {
+        if(activeCategory === 'social') {
             let genRandomIndex = Math.floor(Math.random() * (this.state.socialActs.length - 1));
             selectedActivity = this.state.socialActs[genRandomIndex];
-        } else if(this.props.activeCategory === 'health') {
+        } else if(activeCategory === 'health') {
             let genRandomIndex = Math.floor(Math.random() * (this.state.healthActs.length - 1));
             selectedActivity = this.state.healthActs[genRandomIndex];
-        } else if(this.props.activeCategory === 'creative') {
+        } else if(activeCategory === 'creative') {
             let genRandomIndex = Math.floor(Math.random() * (this.state.creativeActs.length - 1));
             selectedActivity = this.state.creativeActs[genRandomIndex];
-        } else if(this.props.activeCategory === 'misc') {
+        } else if(activeCategory === 'misc') {
             let genRandomIndex = Math.floor(Math.random() * (this.state.miscActs.length - 1));
             selectedActivity = this.state.miscActs[genRandomIndex];
-        } else if(this.props.activeCategory === 'random') {
+        } else if(activeCategory === 'random') {
             let genRandomIndex = Math.floor(Math.random() * (this.state.randomActs.length - 1));
             selectedActivity = this.state.randomActs[genRandomIndex];
         }
@@ -132,7 +133,9 @@ class GeneratedSection extends Component {
     }
 
     toggleDisable = () => {
-        if(this.props.activeCategory === null) {
+        const { activeCategory } = this.props;
+
+        if(activeCategory === null) {
             return s.disabledCta;
         }
 
@@ -140,6 +143,7 @@ class GeneratedSection extends Component {
     }
 
     renderContent = () => {
+        const { activeCategory } = this.props;
 
         if(this.state.loading) {
             return (
@@ -154,7 +158,7 @@ class GeneratedSection extends Component {
             );
         }
 
-        if(this.props.activeCategory === null || !this.state.ctaClicked) {
+        if(activeCategory === null || !this.state.ctaClicked) {
             return (
                 <div className={s.instructionsContainer}>
                     <h1>Instructions</h1>
